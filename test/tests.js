@@ -1,1 +1,1 @@
-import './render-coffee.test.js';
+import './render-brewer.test.js';
