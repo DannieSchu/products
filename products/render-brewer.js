@@ -9,7 +9,7 @@ export default function renderBrewer(brewer) {
     // Create an image
     const img = document.createElement('img');
     // Assign image source and alt text
-    img.src = brewer.image;
+    img.src = '../assets/' + brewer.image;
     img.alt = brewer.name + ' image'; 
     // Append the img element to the li element
     li.appendChild(img);
