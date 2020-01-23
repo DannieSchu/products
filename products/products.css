@@ -2,53 +2,61 @@
     flex-direction: column;
 } */
 
-#coffee-brewers {
+#container {
+    display: flex;
+    /* flex-flow: row wrap; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: space-around;
+}
+
+.brewers li {
     padding: 30px;
     display: flex;
-    flex-flow: row wrap;
     flex-direction: column;
     justify-content: center;
-    /* flex-wrap: nowrap; */
-    position: relative;
+    /* position: relative; */
     background-color: rgb(184, 162, 148);
     /* border: 3px solid rgb(61, 32, 13); */
     color: white;
     /* border-radius: 5px; */
-    width: 30%;
+    width: 20%;
     margin: 20px;
     list-style-type: none;
+    align-content: space-around;
+    align-items: space-around;
 }
 
-#coffee-brewers img {
+#brewers img {
     width: 100px;
-    flex-grow: 1;
-}
+    /* flex-grow: 1; */
+ }
 
-#coffee-brewers h3 {
+#brewers h3 {
     font-size: 1.6em;
     padding: 10px;
     flex-grow: 1;
 }
-#coffee-brewers p {
+#brewers p {
     font-size: 1.0em;
     padding: 10px;
-    flex-grow: 1;
-}
-#coffee-brewers button {
+    /* flex-grow: 1; */
+} */
+#brewers button {
     padding: 10px;
     background-color: rgb(44, 102, 102);
     color: rgb(235, 228, 224);
     /* border: inherit; */
     border-radius: 5px;
-    flex-grow: 2;
+    /* flex-grow: 2; */
     opacity: 0.8;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
- 
+
 }
 
-#coffee-brewers button:hover {
+#brewers button:hover {
     opacity: 0.6;
     background-color: rgb(235, 228, 224);
     color: rgb(23, 129, 129);
