@@ -1,5 +1,5 @@
 // import cart from '../data/cart.js';
-import { calcLineItem } from '../common/utils.js';
+import { calcLineTotal } from '../common/utils.js';
 
 
 export default function renderLineItem(lineItem, someBrewer) {
@@ -27,7 +27,7 @@ export default function renderLineItem(lineItem, someBrewer) {
     
     totalTd.className = 'line-item-total';
     // const total = lineItem.quantity * someBrewer.price;
-    const total = calcLineItem(lineItem.quantity, someBrewer.price);
+    const total = calcLineTotal(lineItem.quantity, someBrewer.price);
     // totalTd.textContent = toUSD(total);
     totalTd.textContent = total;
     tr.appendChild(totalTd);

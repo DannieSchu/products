@@ -20,7 +20,6 @@ for (let i = 0; i < cart.length; i++) {
     tBody.appendChild(newRowElement);
     
 }
-console.log(brewers);
 
 const orderTotal = calcOrderTotal(cart, brewers);
 

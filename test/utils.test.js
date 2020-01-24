@@ -1,4 +1,4 @@
-import findById, { calcLineItem, calcOrderTotal } from '../common/utils.js';
+import findById, { calcLineTotal, calcOrderTotal } from '../common/utils.js';
 import brewers from '../data/brewers.js';
 import cart from '../data/cart.js';
 
@@ -39,7 +39,7 @@ test('find by id', function(expect) {
 // });
 
 
-test('calculate line item', function(expect) {
+test('calculate line total', function(expect) {
   //Arrange
      // Set up your parameters and expectations
     const quantity = 3;
@@ -48,7 +48,7 @@ test('calculate line item', function(expect) {
  
      //Act 
      // Call the function you're testing and set the result to a const
-    const total = calcLineItem(quantity, price);
+    const total = calcLineTotal(quantity, price);
      
      //Assert
      // Make assertions about what is expected valid result
@@ -59,13 +59,13 @@ test('calculate line item', function(expect) {
 test('calculate order total', function(expect) {
   //Arrange
      // Set up your parameters and expectations
-    const expected = 100;
+      
  
      //Act 
      // Call the function you're testing and set the result to a const
-    const total = calcOrderTotal(cart, brewers);
+    const orderTotal = calcOrderTotal(cart, brewers);
      
      //Assert
      // Make assertions about what is expected valid result
-    expect.equal(total, expected);
+    expect.equal(orderTotal, expected);
 });
