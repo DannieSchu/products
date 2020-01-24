@@ -85,7 +85,7 @@ body {
     margin-bottom: 3%;
 }
 
-#brew-button {
+#start-button {
     padding: 20px;
     text-transform: uppercase;
     border-radius: 10px;
@@ -94,9 +94,9 @@ body {
     font-weight: bold;
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    cursor: default;
+    cursor: pointer;
 }
-#brew-button:hover {
+#start-button:hover {
     background-color: rgb(44, 102, 102);
     color: rgb(235, 228, 224);
     

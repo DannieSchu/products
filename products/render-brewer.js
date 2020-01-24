@@ -33,28 +33,29 @@ export default function renderBrewer(brewer) {
     p.textContent = usd;
 
     // Add button
-    const orderButton = document.createElement('button');
-    orderButton.textContent = 'Add';
-    orderButton.value = brewer.code;
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Add to Cart';
+    addButton.className = 'add-button';
+    addButton.value = brewer.id;
     
     // When button is clicked
-    orderButton.addEventListener('click', () => {
+    addButton.addEventListener('click', () => {
         // Initialize state of 'cart' (hoisting)
         let cart;
         // Call local storage
-        let myCart = localStorage.getItem('CART');
+        let json = localStorage.getItem('CART');
         
-        // If myCart already exists
-        if (myCart) {
+        // If json already exists
+        if (json) {
             // then parse the contents and assign to variable
-            cart = JSON.parse(myCart);
+            cart = JSON.parse(json);
             // else, assign variable to empty array
         } else {
             cart = [];
         }
 
         // Initialize state
-        let itemAlreadyInCart = findById(cart, brewer.id);
+        let itemAlreadyInCart = findById(brewer.id, cart);
 
         // If item isn't already present in cart
         if (!itemAlreadyInCart) {
@@ -70,19 +71,20 @@ export default function renderBrewer(brewer) {
         }
         
         // Update JSON with new state (serialize with JSON.stringify)
-        myCart = JSON.stringify(cart);
-        localStorage.setItem('CART', myCart);
+        json = JSON.stringify(cart);
+        localStorage.setItem('CART', json);
         
         // Alert user that an item has been added to cart
         alert(`1 ${brewer.name} added to cart.`);
     });
 
-    p.appendChild(orderButton);
     li.appendChild(p);
+    li.appendChild(addButton);
 
     return li;
 
 }
+
 
 
 
