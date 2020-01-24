@@ -1,3 +1,5 @@
+import findById from '../common/utils.js';
+
 export default function renderBrewer(brewer) {
     // Create list element that contains a class and title (assigned to category and description)
     const li = document.createElement('li');
@@ -31,12 +33,51 @@ export default function renderBrewer(brewer) {
     p.textContent = usd;
 
     // Add button
-    const button = document.createElement('button');
-    button.textContent = 'Add';
-    button.value = brewer.code;
-    p.appendChild(button);
+    const orderButton = document.createElement('button');
+    orderButton.textContent = 'Add';
+    orderButton.value = brewer.code;
+    
+    // When button is clicked
+    orderButton.addEventListener('click', () => {
+        // Initialize state of 'cart' (hoisting)
+        let cart;
+        // Call local storage
+        let myCart = localStorage.getItem('CART');
+        
+        // If myCart already exists
+        if (myCart) {
+            // then parse the contents and assign to variable
+            cart = JSON.parse(myCart);
+            // else, assign variable to empty array
+        } else {
+            cart = [];
+        }
 
-    // Append p element to li
+        // Initialize state
+        let itemAlreadyInCart = findById(cart, brewer.id);
+
+        // If item isn't already present in cart
+        if (!itemAlreadyInCart) {
+            // Set initial item
+            const initialItem = {
+                id: brewer.id,
+                quantity: 1,
+            };
+            // Then push it to the cart
+            cart.push(initialItem);
+        } else {
+            itemAlreadyInCart.quantity++;
+        }
+        
+        // Update JSON with new state (serialize with JSON.stringify)
+        myCart = JSON.stringify(cart);
+        localStorage.setItem('CART', myCart);
+        
+        // Alert user that an item has been added to cart
+        alert(`1 ${brewer.name} added to cart.`);
+    });
+
+    p.appendChild(orderButton);
     li.appendChild(p);
 
     return li;

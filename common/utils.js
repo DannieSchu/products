@@ -1,9 +1,9 @@
 // Define a function that takes and id and an array
 export default function findById(someBrewerId, someBrewerArray) {
     for (let i = 0; i < someBrewerArray.length; i++) {
-        const aBrewer = someBrewerArray[i];
-        if (someBrewerId === aBrewer.id) {
-            return aBrewer;
+        const someBrewer = someBrewerArray[i];
+        if (someBrewerId === someBrewer.id) {
+            return someBrewer;
         }
     }
 }
@@ -38,14 +38,9 @@ export function calcOrderTotal(someCart, someBrewerArray) {
         let lineItem = someCart[i];
         // Find someBrewerArray by ID and store in variable
         const someBrewer = findById(lineItem.id, someBrewerArray);
-        console.log('line item quantity is', lineItem.quantity);
-        console.log('someBrewer price is', someBrewer.price);
         // Execute calcLineTotal function, passing in quantity and price
-        const lineTotal = calcLineTotal(lineItem.quantity, someBrewer.price);
-        console.log('line total is', lineTotal);
-        
+        const lineTotal = calcLineTotal(lineItem.quantity, someBrewer.price);        
         orderTotal += lineTotal;
-        console.log('order total is', orderTotal);
     }
     return roundCurrency(orderTotal);
 }

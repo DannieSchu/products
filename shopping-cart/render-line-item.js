@@ -31,7 +31,6 @@ export default function renderLineItem(lineItem, someBrewer) {
     // totalTd.textContent = toUSD(total);
     totalTd.textContent = total;
     tr.appendChild(totalTd);
-    
 
     return tr;
 }
