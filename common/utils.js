@@ -8,14 +8,6 @@ export default function findById(someBrewerId, someBrewerArray) {
     }
 }
 
-// const findById = (someBrewerId, someBrewerArray) => {
-
-//     someBrewerArray.forEach(brewer => 
-//         if (someBrewerId === brewer.id) {
-//             return brewer;
-//         }
-// };
-
 export function calcLineTotal(quantity, price) {
     const amount = quantity * price;
     return roundCurrency(amount);
@@ -24,10 +16,6 @@ export function calcLineTotal(quantity, price) {
 function roundCurrency(amount) {
     return Math.round(amount * 100) / 100;
 }
-
-// export function calcLineTotal(quantity, price) {
-//     return (Math.round((quantity * price) * 100) / 100);
-// }
 
 export function calcOrderTotal(someCart, someBrewerArray) {
     let orderTotal = 0;

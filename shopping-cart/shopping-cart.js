@@ -1,7 +1,7 @@
 import renderLineItem from './render-line-item.js';
 import findById, { calcOrderTotal } from '../common/utils.js';
-// import cart from '../data/cart.js';
 import brewers from '../data/brewers.js';
+import { clearCart } from './make-api.js';
 
 
 const tBody = document.getElementById('tbody'); 
@@ -18,6 +18,7 @@ if (json) {
 } else {
     cart = [];
 }
+
 // For each item in the array
 for (let i = 0; i < cart.length; i++) {
     // Find id match between brewers array and line items
@@ -42,14 +43,7 @@ orderButton.addEventListener('click', () => {
     if (cart.length === 0) {
         orderButton.disabled = true;
     } else {
-        // Display alert with contents of cart
-        alert(`Order placed: ${JSON.stringify(cart, true, 2)}`);
-        
-        // Update JSON by clearing cart
-        json = localStorage.clear(cart);
-
-        // Redirect user to homepage
-        window.location = '../';
+        clearCart(cart);
     }
 }
 );
