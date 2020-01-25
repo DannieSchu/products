@@ -4,33 +4,33 @@ import { calcLineTotal } from '../common/utils.js';
 
 export default function renderLineItem(lineItem, someBrewer) {
     // Create element that contains a name, a quantity and a price
-    const tr = document.createElement('tr');
+    const tableRow = document.createElement('tr');
     
     // In first cell, place name property
-    const nameTd = document.createElement('td');
-    nameTd.textContent = someBrewer.name;
-    tr.appendChild(nameTd);
+    const nameCell = document.createElement('td');
+    nameCell.textContent = someBrewer.name;
+    tableRow.appendChild(nameCell);
 
     // In second cell, place quantity
-    const quantityTd = document.createElement('td');
-    quantityTd.textContent = lineItem.quantity;
-    tr.appendChild(quantityTd);
+    const quantityCell = document.createElement('td');
+    quantityCell.textContent = lineItem.quantity;
+    tableRow.appendChild(quantityCell);
 
     // In third cell, place price
-    const priceTd = document.createElement('td');
-    // priceTd.textContent = toUSD(someBrewer.price);
-    priceTd.textContent = someBrewer.price;
-    tr.appendChild(priceTd);
+    const priceCell = document.createElement('td');
+    // priceCell.textContent = toUSD(someBrewer.price);
+    priceCell.textContent = someBrewer.price;
+    tableRow.appendChild(priceCell);
 
     // In fourth cell, place total
-    const totalTd = document.createElement('td');
+    const totalCell = document.createElement('td');
     
-    totalTd.className = 'line-item-total';
+    totalCell.className = 'line-item-total';
     // const total = lineItem.quantity * someBrewer.price;
     const total = calcLineTotal(lineItem.quantity, someBrewer.price);
-    // totalTd.textContent = toUSD(total);
-    totalTd.textContent = total;
-    tr.appendChild(totalTd);
+    // totalCell.textContent = toUSD(total);
+    totalCell.textContent = total;
+    tableRow.appendChild(totalCell);
 
-    return tr;
+    return tableRow;
 }

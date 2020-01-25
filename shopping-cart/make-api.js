@@ -1,38 +1,41 @@
 import findById from '../common/utils.js';
 
 const getCart = json => {
-    // Initialize state of 'cart'
-    let cart;
+    // Initialize state of cart
+    let possiblyEmptyCart;
     
     // If json already exists
     if (json) {
         // then parse the contents and assign to variable
-        cart = JSON.parse(json);
+        possiblyEmptyCart = JSON.parse(json);
         // else, assign variable to empty array
     } else {
-        cart = [];
+        possiblyEmptyCart = [];
     }
-    return cart;
+    return possiblyEmptyCart;
 };
 
 const addToCart = (cart, brewer) => {
     
-    // Initialize state
-    const itemAlreadyInCart = findById(brewer.id, cart);
+    // Look throughthe arrays of brewers and current cart state in localStorage for a match; store this as a variable 
+    const requestedItem = findById(brewer.id, cart);
 
     // If item isn't already present in cart
-    if (!itemAlreadyInCart) {
-        // Set initial item
+    if (!requestedItem) {
+        // Set as initial instance of item
         const initialItem = {
             id: brewer.id,
             quantity: 1,
         };
         // Then push it to the cart
         cart.push(initialItem);
+    // If item is in the cart, increment quantity property
     } else {
-        itemAlreadyInCart.quantity++;
+        requestedItem.quantity++;
     }
+    // Stringify cart object and store as variable
     const newCart = JSON.stringify(cart);
+    // Set new item in local storage with key of CART and value of stringified cart object 
     localStorage.setItem('CART', newCart);
 };
 
