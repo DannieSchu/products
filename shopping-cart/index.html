@@ -5,49 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../products/products.css">
     <link rel="stylesheet" href="../common/main.css">
     <link rel="stylesheet" href="shopping-cart.css">
 </head>
 <body>
-    <header>
-        <h1>Coffee Brewer Shopping Cart</h1>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../products/index.html">Coffee Brewers</a>
-            <a href="./">Shopping Cart</a>
-        </nav>
-    </header>
-    <table>
-        <thead>
-          <th>Brewing Devices</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Price</th> 
-          <th scope="col">Total</th> 
-        </thead>
-        <tbody id="tbody">
-            <!-- <tr>
-                <td class="product-heading">Chemex</th>
-                <td>1</td>
-                <td>$20.00</td>
-                <td>$20.00</td>
-            </tr>
-            <tr>
-                <td class="product-heading">V60</th>
-                <td>2</td>
-                <td>$20.00</td>
-                <td>$40.00</td>
-            </tr> -->
-        </tbody>
-        <tfoot>
-            <tr>
-                <td id="order-total-text" colspan="3">Order total:</td>
-                <td id="order-total-cell"></td>
-            </tr>
-        </tfoot>
-      </table>
-      <p class="make-order">
-          <button id="order-button">Place Order</button>
-      </p>
+    <section class="sidebar">
+        <header class="sidebar-header">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../products/index.html">Products</a>
+                <a href="./">Cart</a>
+            </nav>
+            <h1>Shopping Cart</h1>
+            <p>
+                Making coffee at home is easier than you think! Start your coffee-brewing journey with these great devices.
+            </p>
+        </header>
+    </section>
+    <!-- <main class="main-container"> -->
+        <section class="table-container">
+            <table>
+                <thead>
+                <th>Brewing Device</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th> 
+                <th scope="col">Total</th> 
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td id="order-total-text" colspan="3">Order total:</td>
+                        <td id="order-total-cell"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <!-- <div class="make-order"> -->
+                <button id="order-button">Place Order</button>
+            <!-- </div> -->
+        </section>
+      <!-- </main> -->
       <script type="module" src="./shopping-cart.js"></script>
 </body>
 </html>

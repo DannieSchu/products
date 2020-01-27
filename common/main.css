@@ -1,15 +1,61 @@
 * {
     box-sizing: border-box;
-    margin: 0 auto;
     font-family: 'Courier New', Courier, monospace;
 }
 
+.whole-container {
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    background-color: rgb(223, 217, 213);
+    color: rgb(99, 51, 19);
+    margin: 0 auto;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 440px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+}
+
+a {
+    color: rgb(134, 179, 179);
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    letter-spacing: .03em;
+
+}
+
+
+.sidebar p {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+
+/* #cart-link {
+    color: rgb(73, 34, 16);
+} */
+
 header {
-    background-color: rgb(99, 51, 19);
+    background-color: rgb(44, 102, 102);
     /* opacity: 0.6;  */
     color: rgb(223, 217, 213);
-    padding: 60px;
+    padding: 50px;
     font-size: 30px;
+    letter-spacing: .03em;
     /* position: fixed;
     max-width: 100%;
     top: 0;
@@ -27,28 +73,12 @@ header > h1 {
 
 header:hover {
     opacity: 0.6;
+    background: url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2756&q=80")
 }
 
-/* .container {
-    color: rgb(223, 217, 213);
-    position: relative;
-}
-
-nav {
-    position: absolute;
-    left: 0px;
-    width: 200x;
-}
-
-section {
-    margin-left: 200px;
+/* header:hover + a {
+    color: rgb(7, 82, 77);
 } */
-
-body {
-    background-color: rgb(223, 217, 213);
-    color: rgb(99, 51, 19);
-    font-family: 'Courier New', Courier, monospace;
-}
 
 .hero-image {
     background-color: rgb(61, 32, 13);
@@ -56,7 +86,7 @@ body {
     opacity: 0.7; 
     height: 750px;
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     position: relative;
 }
@@ -85,19 +115,18 @@ body {
     margin-bottom: 3%;
 }
 
-#start-button {
+button {
     padding: 20px;
     text-transform: uppercase;
     border-radius: 10px;
-    background-color: rgb(123, 211, 211);
+    background-color: rgb(35, 185, 185);
     color: rgb(61, 32, 13);
     font-weight: bold;
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
 }
-#start-button:hover {
+button:hover {
     background-color: rgb(44, 102, 102);
     color: rgb(235, 228, 224);
-    
 }

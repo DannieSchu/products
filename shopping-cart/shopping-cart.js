@@ -1,5 +1,5 @@
 import renderLineItem from './render-line-item.js';
-import findById, { calcOrderTotal } from '../common/utils.js';
+import { findById, calcOrderTotal, toUSD } from '../common/utils.js';
 import brewers from '../data/brewers.js';
 import { clearCart } from './make-api.js';
 
@@ -32,7 +32,7 @@ for (let i = 0; i < cart.length; i++) {
 }
 
 const orderTotal = calcOrderTotal(cart, brewers);
-orderTotalCell.textContent = orderTotal;
+orderTotalCell.textContent = toUSD(orderTotal);
 
 // Call place order button
 const orderButton = document.getElementById('order-button');

@@ -1,4 +1,4 @@
-import findById from '../common/utils.js';
+import { findById } from '../common/utils.js';
 
 const getCart = json => {
     // Initialize state of cart

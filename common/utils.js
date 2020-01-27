@@ -1,5 +1,6 @@
 // Define a function that takes and id and an array
-export default function findById(someBrewerId, someBrewerArray) {
+
+function findById(someBrewerId, someBrewerArray) {
     for (let i = 0; i < someBrewerArray.length; i++) {
         const someBrewer = someBrewerArray[i];
         if (someBrewerId === someBrewer.id) {
@@ -8,16 +9,24 @@ export default function findById(someBrewerId, someBrewerArray) {
     }
 }
 
-export function calcLineTotal(quantity, price) {
+function toUSD(number) {
+    return number.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    });
+}
+
+function calcLineTotal(quantity, price) {
     const amount = quantity * price;
     return roundCurrency(amount);
 }
 
 function roundCurrency(amount) {
     return Math.round(amount * 100) / 100;
+    
 }
 
-export function calcOrderTotal(someCart, someBrewerArray) {
+function calcOrderTotal(someCart, someBrewerArray) {
     let orderTotal = 0;
     
     // loop through all items in someCart array
@@ -32,3 +41,10 @@ export function calcOrderTotal(someCart, someBrewerArray) {
     }
     return roundCurrency(orderTotal);
 }
+
+
+export { findById,
+    toUSD,
+    calcLineTotal,
+    calcOrderTotal,
+};
