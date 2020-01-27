@@ -52,14 +52,14 @@ const kalita = {
     price: 40.00,
 };
 
-const siphon = {
-    id: 'siphon',
-    name: 'Siphon',
-    image: 'siphon.png',
-    description: 'Are you the coolest person you know? The siphon is the perfect super-hipster option for you.',
-    category: 'Pour Over',
-    price: 82.00,
-};
+// const siphon = {
+//     id: 'siphon',
+//     name: 'Siphon',
+//     image: 'siphon.png',
+//     description: 'Are you the coolest person you know? The siphon is the perfect super-hipster option for you.',
+//     category: 'Pour Over',
+//     price: 82.00,
+// };
 
 const coldBrew = {
     id: 'cold-brew',
@@ -78,7 +78,7 @@ const brewers = [
     clever,
     frenchPress,
     kalita,
-    siphon,
+    // siphon,
     coldBrew,
 ];
 
