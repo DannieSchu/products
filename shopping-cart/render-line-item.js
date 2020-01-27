@@ -1,5 +1,5 @@
 // import cart from '../data/cart.js';
-import { calcLineTotal } from '../common/utils.js';
+import { toUSD, calcLineTotal } from '../common/utils.js';
 
 
 export default function renderLineItem(lineItem, someBrewer) {
@@ -9,6 +9,7 @@ export default function renderLineItem(lineItem, someBrewer) {
     // In first cell, place name property
     const nameCell = document.createElement('td');
     nameCell.textContent = someBrewer.name;
+    nameCell.classList.add('product-heading');
     tableRow.appendChild(nameCell);
 
     // In second cell, place quantity
@@ -18,8 +19,8 @@ export default function renderLineItem(lineItem, someBrewer) {
 
     // In third cell, place price
     const priceCell = document.createElement('td');
-    // priceCell.textContent = toUSD(someBrewer.price);
-    priceCell.textContent = someBrewer.price;
+    priceCell.textContent = toUSD(someBrewer.price);
+    // priceCell.textContent = someBrewer.price;
     tableRow.appendChild(priceCell);
 
     // In fourth cell, place total
@@ -27,9 +28,8 @@ export default function renderLineItem(lineItem, someBrewer) {
     
     totalCell.className = 'line-item-total';
     // const total = lineItem.quantity * someBrewer.price;
-    const total = calcLineTotal(lineItem.quantity, someBrewer.price);
-    // totalCell.textContent = toUSD(total);
-    totalCell.textContent = total;
+    let total = calcLineTotal(lineItem.quantity, someBrewer.price);
+    totalCell.textContent = toUSD(total);
     tableRow.appendChild(totalCell);
 
     return tableRow;

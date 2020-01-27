@@ -1,5 +1,5 @@
-// import findById from '../common/utils.js';
 import { getCart, addToCart } from '../shopping-cart/make-api.js';
+import { toUSD } from '../common/utils.js';
 
 export default function renderBrewer(brewer) {
     // Create list element in the DOM
@@ -23,14 +23,14 @@ export default function renderBrewer(brewer) {
     p.classList.add('price');
 
     // Calculate the price
-    const usd = '$' + brewer.price.toFixed(2);
-    p.textContent = usd;
+    // const usd = '$' + brewer.price.toFixed(2);
+    p.textContent = toUSD(brewer.price);
 
     // Create button element
     const addButton = document.createElement('button');
-    addButton.textContent = 'Add to Cart';
+    addButton.textContent = 'Add';
     addButton.classList.add('add-button');
-    addButton.value = brewer.id;
+    addButton.value = brewer.code;
 
     // Create dropdown element
     // const quantityDropDown = document.createElement('select');
@@ -68,8 +68,8 @@ export default function renderBrewer(brewer) {
     });
     
     // Append elements to new list element
-    listElement.appendChild(img);
     listElement.appendChild(h3);
+    listElement.appendChild(img);
     listElement.appendChild(p);
     listElement.appendChild(addButton);
     

@@ -3,60 +3,73 @@
 } */
 
 table {
-    width: 50%;
-    margin-top: 5%;
+    width: 100%;
+    /* margin: 20%; */
     color: rgb(44, 102, 102);
+    margin-bottom: 50px;
+}
+.table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-left: 160px;
+    margin-top: 60px;
 }
 
 th {
     height: 50px;
-    padding: 15px;
+    padding: 20px;
     border-bottom: 1px solid rgb(99, 51, 19);
-    background-color: rgb(44, 102, 102);
+    background-color: rgb(99, 51, 19);
     color: rgb(235, 228, 224);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
+    letter-spacing: .03em;
 }
 
 .product-heading {
+    text-align: left;
     font-weight: bold;
 }
 
 td {
     padding: 15px;
     border-bottom: 1px solid rgb(99, 51, 19);
+    text-align: center;
 }
 
-#order-total-text {
+#order-total-text, 
+#order-total-cell {
     text-align: right;
     font-weight: bold;
+    background-color: rgb(166, 196, 194);
+    color: rgb(233, 228, 223);
 }
 
 tr:hover {
     /* background-color: rgb(44, 102, 102); */
-    background-color: rgb(180, 159, 145);
+    background-color: rgb(212, 198, 188);
 }
 
-button {
+#order-button {
+    background-color: rgb(166, 196, 194);
+}
+
+
+
+/* #order-button {
     padding: 10px;
     background-color: rgb(44, 102, 102);
     color: rgb(235, 228, 224);
-    /* border: inherit; */
     border-radius: 5px;
-    /* flex-grow: 2; */
+    font-size: 25px;
     opacity: 0.8;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
-}
+} */
 
-#brewers button:hover {
-    opacity: 0.6;
-    background-color: rgb(235, 228, 224);
-    color: rgb(23, 129, 129);
-}
-
-.make-order {
-    display: flex;
-    
+#order-button:hover {
+    background-color: rgb(44, 102, 102);;
 }
