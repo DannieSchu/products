@@ -8,7 +8,7 @@ table {
     color: rgb(44, 102, 102);
     margin-bottom: 50px;
 }
-.table-container {
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;

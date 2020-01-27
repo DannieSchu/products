@@ -15,7 +15,7 @@
             <nav>
                 <a href="../index.html">Home</a>
                 <a href="../products/index.html">Products</a>
-                <a href="./">Cart</a>
+                <a href="../product-entry/index.html">Add Item</a>
             </nav>
             <h1>Shopping Cart</h1>
             <p>
@@ -23,29 +23,25 @@
             </p>
         </header>
     </section>
-    <!-- <main class="main-container"> -->
-        <section class="table-container">
-            <table>
-                <thead>
-                <th>Brewing Device</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th> 
-                <th scope="col">Total</th> 
-                </thead>
-                <tbody id="tbody">
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td id="order-total-text" colspan="3">Order total:</td>
-                        <td id="order-total-cell"></td>
-                    </tr>
-                </tfoot>
-            </table>
-            <!-- <div class="make-order"> -->
-                <button id="order-button">Place Order</button>
-            <!-- </div> -->
-        </section>
-      <!-- </main> -->
+    <section class="main-container">
+        <table>
+            <thead>
+            <th>Brewing Device</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th> 
+            <th scope="col">Total</th> 
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td id="order-total-text" colspan="3">Order total:</td>
+                    <td id="order-total-cell"></td>
+                </tr>
+            </tfoot>
+        </table>
+            <button id="order-button">Place Order</button>
+    </section>
       <script type="module" src="./shopping-cart.js"></script>
 </body>
 </html>

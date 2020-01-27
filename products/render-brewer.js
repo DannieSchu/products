@@ -29,7 +29,7 @@ export default function renderBrewer(brewer) {
     // Create button element
     const addButton = document.createElement('button');
     addButton.textContent = 'Add';
-    addButton.classList.add('add-button');
+    addButton.classList.add('brown-button');
     addButton.value = brewer.code;
 
     // Create dropdown element

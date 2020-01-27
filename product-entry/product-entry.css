@@ -1,0 +1,26 @@
+legend {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(44,102,102);    
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: .03em;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px;
+}
+
+input {
+    float: right;
+    margin-left: 30px;
+    width: 200px;
+}
+
+.brown-button {
+    float: right;
+}

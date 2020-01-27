@@ -35,19 +35,12 @@ a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     letter-spacing: .03em;
-
 }
-
 
 .sidebar p {
     font-size: 20px;
     margin-top: 50px;
 }
-
-
-/* #cart-link {
-    color: rgb(73, 34, 16);
-} */
 
 header {
     background-color: rgb(44, 102, 102);
@@ -119,13 +112,14 @@ button {
     padding: 20px;
     text-transform: uppercase;
     border-radius: 10px;
-    background-color: rgb(35, 185, 185);
+    background-color: rgb(63, 189, 189);
     color: rgb(61, 32, 13);
     font-weight: bold;
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
 }
+
 button:hover {
     background-color: rgb(44, 102, 102);
     color: rgb(235, 228, 224);
