@@ -1,11 +1,13 @@
 import renderLineItem from './render-line-item.js';
 import { findById, calcOrderTotal, toUSD } from '../common/utils.js';
-import brewers from '../data/brewers.js';
 import { clearCart } from './make-api.js';
+import { getProducts } from '../common/utils.js';
 
 
 const tBody = document.getElementById('tbody'); 
 const orderTotalCell = document.getElementById('order-total-cell');
+
+const brewers = getProducts();
 
 // Call local storage
 let json = localStorage.getItem('CART');
@@ -24,6 +26,7 @@ for (let i = 0; i < cart.length; i++) {
     // Find id match between brewers array and line items
     const lineItem = cart[i];
     const newItem = findById(lineItem.id, brewers);
+    console.log('brewers', brewers);
     
     // Render line item for item in cart
     const dom = renderLineItem(lineItem, newItem);

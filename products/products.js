@@ -1,5 +1,5 @@
 import renderBrewer from './render-brewer.js';
-import brewers from '../data/brewers.js';
+import { brewers } from '../data/brewers.js';
 
 // Set 'list' variable storing an array of brewers
 const brewersList = document.getElementById('brewers');

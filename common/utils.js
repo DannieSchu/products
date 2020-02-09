@@ -1,5 +1,6 @@
-// Define a function that takes and id and an array
+import { brewers } from '../data/brewers.js';
 
+// Define a function that takes and id and an array
 function findById(someBrewerId, someBrewerArray) {
     for (let i = 0; i < someBrewerArray.length; i++) {
         const someBrewer = someBrewerArray[i];
@@ -42,9 +43,34 @@ function calcOrderTotal(someCart, someBrewerArray) {
     return roundCurrency(orderTotal);
 }
 
+const BREWER_KEY = 'brewers';
+
+const seedProductsIntoLocalStorage = () => {
+// Retrieve the existing products array from localStorage
+    const productsAlreadyExist = localStorage.getItem(BREWER_KEY);
+
+    // If products do not already exist in localStorage
+    if (!productsAlreadyExist) {
+        // Stringify products and push into array
+        const stringyBrewers = JSON.stringify(brewers);
+        // Re-save products array
+        localStorage.setItem(BREWER_KEY, stringyBrewers);
+    }
+};
+
+const getProducts = () => {
+    seedProductsIntoLocalStorage();
+
+    const products = localStorage.getItem(BREWER_KEY);
+    const parsedProducts = JSON.parse(products);
+
+    return parsedProducts;
+};
+
 
 export { findById,
     toUSD,
     calcLineTotal,
     calcOrderTotal,
+    getProducts,
 };

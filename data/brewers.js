@@ -85,4 +85,4 @@ const brewers = [
 
 
 
-export default brewers;
+export { brewers };
