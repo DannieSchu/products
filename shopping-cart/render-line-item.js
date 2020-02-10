@@ -25,9 +25,7 @@ export default function renderLineItem(lineItem, someBrewer) {
 
     // In fourth cell, place total
     const totalCell = document.createElement('td');
-    
     totalCell.className = 'line-item-total';
-    // const total = lineItem.quantity * someBrewer.price;
     let total = calcLineTotal(lineItem.quantity, someBrewer.price);
     totalCell.textContent = toUSD(total);
     tableRow.appendChild(totalCell);

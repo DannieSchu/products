@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="../products/products.css">
+    <link rel="stylesheet" href="../shopping-cart/shopping-cart.css">
+    <link rel="stylesheet" href="../common/main.css">
+    <link rel="stylesheet" href="product-entry.css">
+</head>
+<body>
+    <section class="sidebar">
+        <header class="sidebar-header">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../products/index.html">Products</a>
+                <a href="../shopping-cart/index.html">Cart</a>
+            </nav>
+            <h1>Product Entry</h1>
+            <p>
+                Making coffee at home is easier than you think! Start your coffee-brewing journey with these great devices.
+            </p>
+        </header>
+    </section>
+    <main class="main-container">
+        <form id="product-entry-form">
+            <fieldset>
+                <legend>
+                    Add Your Desired Brewing Device
+                </legend>
+                <label>
+                    ID
+                    <input type="text" name="id">
+                </label>
+                <br>
+                <label>
+                    Name
+                    <input type="text" name="name">
+                </label>
+                <br>
+                <label>
+                    Image
+                    <input type="text" name="image">
+                </label>
+                <br>
+                <label>
+                    Price
+                    <input type="number" name="price">
+                </label>
+                <br>
+                <button class="brown-button" id="form-button" type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <section id="products-section">
+            <h2>Products</h2>
+            <ul id="brewers"></ul>
+        </section>
+    </main>
+    <script type="module" src="./product-entry.js"></script>
+</body>
+</html>

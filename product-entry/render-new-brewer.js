@@ -4,14 +4,11 @@ import { toUSD } from '../common/utils.js';
 export default function renderBrewer(brewer) {
     // Create list element in the DOM
     const listElement = document.createElement('li');
-    // The class of the list element should correspond to the brewer category
-    listElement.className = brewer.category;
-    // The title of the list element should correspond to the brewer description
-    listElement.title = brewer.description;
 
     // Create an image
     const img = document.createElement('img');
-    img.src = '../assets/' + brewer.image;
+    img.src = brewer.image;
+    img.style.width = '150px';
     img.alt = brewer.name + ' image'; 
 
     // Create an h3 element
@@ -24,31 +21,15 @@ export default function renderBrewer(brewer) {
 
     // Calculate the price
     // const usd = '$' + brewer.price.toFixed(2);
-    p.textContent = toUSD(brewer.price);
+    const numberizedPrice = Number(brewer.price);
+    p.textContent = `$${numberizedPrice.toFixed(2)}`;
+    // p.textContent = toUSD(brewer.price);
 
     // Create button element
     const addButton = document.createElement('button');
     addButton.textContent = 'Add';
     addButton.classList.add('brown-button');
     addButton.value = brewer.code;
-
-    // Create dropdown element
-    // const quantityDropDown = document.createElement('select');
-    // quantityDropDown.name = 'quantities';
-    // quantityDropDown.value = brewer.id;
-    // const quantityOne = document.createElement('option');
-    // quantityOne.value = 1;
-    // quantityOne.textContent = 1;
-    // const quantityTwo = document.createElement('option');
-    // quantityTwo.value = 2;
-    // quantityTwo.textContent = 2;
-    // const quantityThree = document.createElement('option');
-    // quantityThree.value = 3;
-    // quantityThree.textContent = 3;
-
-    // Append dropdown menu to button
-    // quantityDropDown.append(quantityOne, quantityTwo, quantityThree);
-    // addButton.appendChild(quantityDropDown);
 
     // When button is clicked
     addButton.addEventListener('click', () => {

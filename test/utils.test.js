@@ -1,5 +1,5 @@
 import { findById, calcLineTotal } from '../common/utils.js';
-import brewers from '../data/brewers.js';
+import { brewers } from '../data/brewers.js';
 
 const test = QUnit.test;
 
