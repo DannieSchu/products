@@ -35,17 +35,13 @@ form {
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 input {
     float: right;
     margin-left: 30px;
     width: 200px;
-}
-
-.brown-button {
-    float: right;
 }
 
 .main-container {
@@ -55,8 +51,7 @@ input {
 #remove-button {
     background-color: rgb(36, 153, 153);
     height: 40px;
-    margin-top: 150px;
-    margin-right: 30px;
+    margin: 150px 30px auto 10px;
 }
 
 #remove-button:hover {
