@@ -1,10 +1,5 @@
-/* table, th, td {
-    border: 1px solid rgb(99, 51, 19);
-} */
-
 table {
     width: 100%;
-    /* margin: 20%; */
     color: rgb(44, 102, 102);
     margin-bottom: 50px;
 }
@@ -15,6 +10,10 @@ table {
     align-items: flex-end;
     margin-left: 160px;
     margin-top: 60px;
+}
+
+#sidebar-cart {
+    height: 100vh;
 }
 
 th {
@@ -48,27 +47,12 @@ td {
 }
 
 tr:hover {
-    /* background-color: rgb(44, 102, 102); */
     background-color: rgb(212, 198, 188);
 }
 
 #order-button {
     background-color: rgb(166, 196, 194);
 }
-
-
-
-/* #order-button {
-    padding: 10px;
-    background-color: rgb(44, 102, 102);
-    color: rgb(235, 228, 224);
-    border-radius: 5px;
-    font-size: 25px;
-    opacity: 0.8;
-    text-transform: uppercase;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    cursor: pointer;
-} */
 
 #order-button:hover {
     background-color: rgb(44, 102, 102);;

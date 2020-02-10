@@ -9,6 +9,15 @@ function findById(someBrewerId, someBrewerArray) {
         }
     }
 }
+// Define a function that takes and id and an array
+function findByCode(someBrewerCode, someBrewerArray) {
+    for (let i = 0; i < someBrewerArray.length; i++) {
+        const someBrewer = someBrewerArray[i];
+        if (someBrewerCode === someBrewer.code) {
+            return someBrewer;
+        }
+    }
+}
 
 function toUSD(number) {
     return number.toLocaleString('en-US', {
@@ -69,6 +78,7 @@ const getProducts = () => {
 
 
 export { findById,
+    findByCode,
     toUSD,
     calcLineTotal,
     calcOrderTotal,

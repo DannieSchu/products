@@ -15,6 +15,29 @@ fieldset {
     padding: 50px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 200px;
+    margin-top: 80px;
+}
+
+#products-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 input {
     float: right;
     margin-left: 30px;
@@ -23,4 +46,21 @@ input {
 
 .brown-button {
     float: right;
+}
+
+.main-container {
+    margin: 0;
+}
+
+#remove-button {
+    background-color: rgb(36, 153, 153);
+    height: 40px;
+    margin-top: 150px;
+    margin-right: 30px;
+}
+
+#remove-button:hover {
+    opacity: 0.6;
+    background-color: rgb(155, 72, 34);
+    color: white;
 }
