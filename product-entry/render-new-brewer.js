@@ -1,5 +1,4 @@
 import { getCart, addToCart } from '../shopping-cart/make-api.js';
-import { toUSD } from '../common/utils.js';
 
 export default function renderBrewer(brewer) {
     // Create list element in the DOM
@@ -20,10 +19,8 @@ export default function renderBrewer(brewer) {
     p.classList.add('price');
 
     // Calculate the price
-    // const usd = '$' + brewer.price.toFixed(2);
     const numberizedPrice = Number(brewer.price);
     p.textContent = `$${numberizedPrice.toFixed(2)}`;
-    // p.textContent = toUSD(brewer.price);
 
     // Create button element
     const addButton = document.createElement('button');
@@ -36,7 +33,7 @@ export default function renderBrewer(brewer) {
         // Get item (key: CART) from localStorage and assign variable json
         let json = localStorage.getItem('CART');
 
-        // Get possibly empty cart and store as variable (parse contents if cart already exists; otherwise, create empty array)
+        // Get cart and store as variable
         let possiblyEmptyCart = getCart(json);
 
         // Add requested item to cart
